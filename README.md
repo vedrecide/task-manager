@@ -1,5 +1,7 @@
 # Simple Task Manager
 
+![A Screenshot I guess](https://github.com/1olipop/task-manager/blob/main/screenshot.png)
+
 This task manager is made in Flask and SQLite as you can see REQUIREMENTS.txt file
 All the requirements and the things to install are there in the REQUIREMENTS.txt file itself..
 
