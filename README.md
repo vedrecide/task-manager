@@ -5,7 +5,13 @@ All the requirements and the things to install are there in the REQUIREMENTS.txt
 
 ## How to run?
 
-First you have to initialize the virtual enviroment which is there in the repository itself..
+First you can create a virtual enviroment but that's totally optional..
+And a side note, you must have virtualenv installed or it won't work :/
+```
+virtualenv env
+```
+
+Then you have to initialize the virtual enviroment
 You can run the following command:
 ```
 source env/bin/activate
