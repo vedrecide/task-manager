@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Task Master</title>
+<style>
+    body {
+        padding: 10px;
+        margin: auto;
+        font-family: sans-serif;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    table, th, tr, td {
+        padding: 10px;
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    a {
+        border: 0.5px solid black;
+        border-radius: 15px;
+        padding: 5px;
+        text-decoration: none;
+        color: darkblue;
+    }
+
+    a:hover {
+        background-color: lightblue;
+        color: black;
+        text-decoration: underline;
+    }
+
+    form {
+        text-align: center;
+    }
+
+</style>
+{% endblock %}
+
+{% block para %}
+<div class='content'>
+    <h1 style="text-align: center;">Task Master</h1>
+    {% if tasks|length < 1 %}
+    <h1 style="font-size: medium;">There are no tasks. Create one below!</h1>
+    {% else %}
+    <table style="margin: auto;">
+        <tr>
+            <th>Task</th>
+            <th>Added</th>
+            <th>Actions</th>
+        </tr>
+        <tr>
+        {% for task in tasks %}
+            <td>{{ task.content }}</td>
+            <td>{{ task.date_created.strftime("%a, %d %B %Y, %I:%M %p UTC ") }}</td>
+            <td>
+                <a href="/delete/{{task.id}}">Delete</a>
+                <br>
+                <br>
+                <a href="/update/{{task.id}}">Update</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <br>
+    {% endif %}
+
+    <form action="/" method="POST">
+        <input type="text" name="content" id="content">
+        <input type="submit" value="Add Task">
+    </form>
+
+</div>
+{% endblock %}
