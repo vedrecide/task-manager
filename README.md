@@ -8,7 +8,6 @@ All the requirements and the things to install are there in the REQUIREMENTS.txt
 ## How to run?
 
 First you can create a virtual enviroment but that's totally optional..
-And a side note, you must have virtualenv installed or it won't work :/
 ```
 virtualenv env
 ```
